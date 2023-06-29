@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/jhamil545/microserv-final.git
+          uri: https://github.com/Dan-Elioth/ExamenMicro.git
           search-paths: config-data
-          username: noetipo
-          password: Tipo47259697
+          username: arodan10
+          password: 17537
           default-label: main
   security:
     user:
