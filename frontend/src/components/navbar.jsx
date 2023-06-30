@@ -23,10 +23,10 @@ const Navbar = () => {
                 {/* <!-- Active Link = text-indigo-500 */}
                 {/* Inactive Link = hover:text-indigo-500 --> */}
 				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Categoria</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Categoria</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/producto">Producto</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Cliente</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Producto</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/producto">Cliente</Link></li>
 				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Personal</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Venta</Link></li>
 			</ul>
 		</div>
 		<div class="order-2 md:order-3">

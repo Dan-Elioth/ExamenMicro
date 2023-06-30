@@ -3,7 +3,7 @@ import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
 import { InputNumber } from "primereact/inputnumber";
 import { Dropdown } from "primereact/dropdown";
-import { Button } from "primereact/button";
+
 
 export const DialogCreateUpdate = (props) => {
   const {
@@ -48,55 +48,16 @@ export const DialogCreateUpdate = (props) => {
     onChange_03,
     className_03,
     msgRequired_03,
-    htmlFor_04,
-    label_04,
-    id_04,
-    value_04,
-    onChange_04,
-    className_04,
-    msgRequired_04,
-    htmlFor_05,
-    label_05,
-    id_05,
-    value_05,
-    onChange_05,
-    className_05,
-    msgRequired_05,
-    htmlFor_06,
-    label_06,
-    id_06,
-    value_06,
-    onChange_06,
-    className_06,
-    msgRequired_06,
-    htmlFor_07,
-    label_07,
-    id_07,
-    value_07,
-    onChange_07,
-    className_07,
-    msgRequired_07,
-    htmlFor_08,
-    label_08,
-    id_08,
-    value_08,
-    onChange_08,
-    className_08,
-    msgRequired_08,
     label,
     isCategory,
-    valueFile,
-    imagen,
-    onChangeFile,
+    
   } = props;
 
-  const fileInputRef = React.createRef();
 
-  const handleClick = () => {
-    fileInputRef.current.click();
-  };
 
   return (
+
+    
     <Dialog
       visible={visible}
       style={{ width: width }}
@@ -109,13 +70,8 @@ export const DialogCreateUpdate = (props) => {
     >
       {!isCategory && (
         <>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "2rem",
-            }}
-          >
+           <>
+          <div>
             <div>
               <div className="field">
                 <label className="mb-3 font-bold">{label}</label>
@@ -161,151 +117,67 @@ export const DialogCreateUpdate = (props) => {
                   gap: "1rem",
                 }}
               >
-                <div className="field">
-                  <label htmlFor={htmlFor_01} className="font-bold">
-                    {label_01}
-                  </label>
-                  <div className="p-inputgroup">
-                    <span className="p-inputgroup-addon">S/.</span>
-                    <InputNumber
-                      id={id_01}
-                      value={value_01}
-                      onChange={onChange_01}
-                      required
-                      className={className_01}
-                      placeholder="Price"
-                    />
-                    <span className="p-inputgroup-addon">.00</span>
-                  </div>
-                  {msgRequired_01}
-                </div>
+
+                {/* soles */}
                 <div className="field">
                   <label htmlFor={htmlFor_02} className="font-bold">
                     {label_02}
                   </label>
-                  <InputText
-                    id={id_02}
-                    value={value_02}
-                    onChange={onChange_02}
-                    required
-                    className={className_02}
-                  />
+                  <div className="p-inputgroup">
+                    <span className="p-inputgroup-addon">S/.</span>
+                    <InputText
+                      id={id_02}
+                      value={value_02}
+                      onChange={onChange_02}
+                      required
+                      className={className_02}
+                      placeholder="Price"
+                    />
+                    <span className="p-inputgroup-addon">.00</span>
+                  </div>
                   {msgRequired_02}
                 </div>
-              </div>
-            </div>
-            <div className="field">
-              <div className="p-field">
-                <label htmlFor="file" className="font-bold">
-                  Imagen:
-                </label>
-                <div className="p-inputgroup mt-3">
-                  <input
-                    ref={fileInputRef}
-                    accept="image/*"
-                    type="file"
-                    className="p-inputtext"
-                    style={{ display: "none" }}
-                    onChange={onChangeFile}
-                  />
-                  <Button
-                    type="button"
-                    icon="pi pi-upload"
-                    label="Seleccionar"
-                    onClick={handleClick}
-                  />
+
+                  {/* stock */}
+                <div className="field">
+                  <label htmlFor={htmlFor_03} className="font-bold">
+                    {label_03}
+                  </label>
                   <InputText
-                    readOnly
-                    value={valueFile}
-                    placeholder="Seleccionar archivo"
+                    id={id_03}
+                    value={value_03}
+                    onChange={onChange_03}
+                    required
+                    className={className_03}
                   />
+                  {msgRequired_03}
                 </div>
-                {imagen}
               </div>
             </div>
+            
           </div>
+          
+          {/* detalle */}
           <div style={{ display: "flex", gap: "1rem" }}>
             <div className="field" style={{ width: "30rem" }}>
-              <label htmlFor={htmlFor_03} className="font-bold">
-                {label_03}
+              <label htmlFor={htmlFor_01} className="font-bold">
+                {label_01}
               </label>
               <InputText
-                id={id_03}
-                value={value_03}
-                onChange={onChange_03}
+                id={id_01}
+                value={value_01}
+                onChange={onChange_01}
                 required
-                className={className_03}
+                className={className_01}
               />
-              {msgRequired_03}
+              {msgRequired_01}
             </div>
-            <div className="field">
-              <label htmlFor={htmlFor_04} className="font-bold">
-                {label_04}
-              </label>
-              <InputText
-                id={id_04}
-                value={value_04}
-                onChange={onChange_04}
-                required
-                className={className_04}
-              />
-              {msgRequired_04}
-            </div>
+           
           </div>
-          <div style={{ display: "flex", gap: "1rem" }}>
-            <div className="field">
-              <label htmlFor={htmlFor_05} className="font-bold">
-                {label_05}
-              </label>
-              <InputText
-                id={id_05}
-                value={value_05}
-                onChange={onChange_05}
-                required
-                className={className_05}
-              />
-              {msgRequired_05}
-            </div>
-            <div className="field">
-              <label htmlFor={htmlFor_06} className="font-bold">
-                {label_06}
-              </label>
-              <InputText
-                id={id_06}
-                value={value_06}
-                onChange={onChange_06}
-                required
-                className={className_06}
-              />
-              {msgRequired_06}
-            </div>
-            <div className="field">
-              <label htmlFor={htmlFor_07} className="font-bold">
-                {label_07}
-              </label>
-              <InputText
-                id={id_07}
-                value={value_07}
-                onChange={onChange_07}
-                required
-                className={className_07}
-              />
-              {msgRequired_07}
-            </div>
-            <div className="field">
-              <label htmlFor={htmlFor_08} className="font-bold">
-                {label_08}
-              </label>
-              <InputText
-                id={id_08}
-                value={value_08}
-                onChange={onChange_08}
-                required
-                className={className_08}
-              />
-              {msgRequired_08}
-            </div>
-          </div>
+         
+        </>
+          
+         
         </>
       )}
       {isCategory && (
@@ -337,19 +209,7 @@ export const DialogCreateUpdate = (props) => {
             />
             {msgRequired_01}
           </div>
-          <div className="field">
-            <label htmlFor={htmlFor_02} className="font-bold">
-              {label_02}
-            </label>
-            <InputText
-              id={id_02}
-              value={value_02}
-              onChange={onChange_02}
-              required
-              className={className_02}
-            />
-            {msgRequired_02}
-          </div>
+        
         </>
       )}
     </Dialog>

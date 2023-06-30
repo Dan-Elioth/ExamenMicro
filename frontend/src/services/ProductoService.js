@@ -1,25 +1,31 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:9090/producto";
+import { APIProducto, headers} from "../services/apiConfig"
+
 
 export const getProductList = () => {
-  return axios.get(API_URL);
+  return axios.get(APIProducto, { headers
+  });
 };
 
 export const createProduct = (product) => {
-  return axios.post(API_URL, product);
+  return axios.post(APIProducto, product, { headers
+  });
 };
 
-export const updateProduct = (id, product) => {
-  return axios.put(`${API_URL}/imagen/${id}`, product);
+export const updateProduct = (product) => {
+  return axios.put(APIProducto, product, { headers
+  });
 };
 
 export const deleteProduct = (id) => {
-  const url = `${API_URL}/${id}`;
-  return axios.delete(url);
+  const url = `${APIProducto}/${id}`;
+  return axios.delete(url, { headers
+  });
 };
 
 export const deleteSelectedProducts = (productIds) => {
   const deleteRequests = productIds.map((id) => deleteProduct(id));
-  return Promise.all(deleteRequests);
+  return Promise.all(deleteRequests, { headers
+  });
 };

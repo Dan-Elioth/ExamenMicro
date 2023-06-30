@@ -22,7 +22,7 @@ export default function Category() {
   let dataCategory = {
     nombre: "",
     descripcion: "",
-    estado: "",
+
   };
 
   const [isNavbar] = useState(true);
@@ -61,7 +61,7 @@ export default function Category() {
   const saveUpdate = () => {
     setSubmitted(true);
 
-    if (category.nombre && category.estado) {
+    if (category.nombre) {
       if (category.id || isCreating === false) {
         updateCategory(category)
           .then(() => {
@@ -375,8 +375,6 @@ export default function Category() {
         header_00="Nombre"
         nombre_01="descripcion"
         header_01="Descripción"
-        nombre_02="estado"
-        header_02="Estado"
         body={actionBodyTemplate}
       />
       {/** Modal de CREAR y ACTUALIZAR */}
@@ -408,27 +406,14 @@ export default function Category() {
         onChange_01={(e) => onInputChange(e, "descripcion")}
         className_01={classNames({
           "p-invalid": submitted && !category.descripcion,
-        })}
+        })}ge
         msgRequired_01={
           submitted &&
           !category.descripcion && (
             <small className="p-error">La descripción es obligatorio.</small>
           )
         }
-        htmlFor_02="estado"
-        label_02="Estado"
-        id_02="estado"
-        value_02={category.estado}
-        onChange_02={(e) => onInputChange(e, "estado")}
-        className_02={classNames({
-          "p-invalid": submitted && !category.estado,
-        })}
-        msgRequired_02={
-          submitted &&
-          !category.estado && (
-            <small className="p-error">El estado es obligatorio.</small>
-          )
-        }
+       
       />
       {/** Modal de ELIMINAR una categoría */}
       <DialogDelete
