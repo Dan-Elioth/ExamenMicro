@@ -23,13 +23,14 @@ const Navbar = () => {
                 {/* <!-- Active Link = text-indigo-500 */}
                 {/* Inactive Link = hover:text-indigo-500 --> */}
 				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Categoria</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Producto</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/producto">Cliente</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Personal</Link></li>
-				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/category">Venta</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/producto">Producto</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/cliente">Cliente</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/">Personal</Link></li>
+				<li class="md:px-4 md:py-2 hover:text-indigo-400"><Link to="/">Venta</Link></li>
 			</ul>
 		</div>
 		<div class="order-2 md:order-3">
+		
 			<button class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2">
                 {/* <!-- Heroicons - Login Solid --> */}
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -37,6 +38,7 @@ const Navbar = () => {
                 </svg>
                 <span>Login</span>
             </button>
+			
 		</div>
 	</div>
 </nav>

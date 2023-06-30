@@ -1,4 +1,4 @@
-import Label from "../components/Label";
+import Label from "./Label";
 
 const Input = ({ onChange, className, type, value, title }) => {
     return (

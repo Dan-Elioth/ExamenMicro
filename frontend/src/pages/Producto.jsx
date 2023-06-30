@@ -607,6 +607,7 @@ import { DialogCreateUpdate, DialogDelete } from "../components/auth/DialogCatal
 import * as ProductoService from "../services/ProductoService";
 import { exportToExcel, exportToPdf } from "../export/ExportFilePro";
 import { getCategoryList } from "../services/CategoriaService";
+import Navbar from "../components/navbar";
 
 export default function Product() {
   let dataProduct = {
@@ -619,6 +620,8 @@ export default function Product() {
     },
 
   };
+
+  const [isNavbar] = useState(true);
 
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -975,6 +978,8 @@ export default function Product() {
   return (
     <div>
       {/** TABLA de la categoría */}
+
+      <Navbar isNavbar={isNavbar} />
       <Table
         isCategory={false}
         refToast={toast}

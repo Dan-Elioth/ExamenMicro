@@ -9,12 +9,12 @@ export const exportToPdf = (categorias) => {
   const columns = [
     { header: "Id", dataKey: "id" },
     { header: "Nombre", dataKey: "nombre" },
-    { header: "Estado", dataKey: "estado" },
+    { header: "Descripción", dataKey: "descripcion" }
   ];
   const rows = categorias.map((categoria) => ({
     id: categoria.id,
     nombre: categoria.nombre,
-    estado: categoria.estado,
+    descripcion: categoria.descripcion,
   }));
 
   doc.autoTable({

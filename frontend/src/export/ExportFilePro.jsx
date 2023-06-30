@@ -9,31 +9,23 @@ export const exportToPdf = (products) => {
   const columns = [
     { header: "Id", dataKey: "id" },
     { header: "Nombre", dataKey: "nombre" },
-    { header: "Imagen", dataKey: "imagen" },
-    { header: "Categoría", dataKey: "categoria" },
-    { header: "Estado", dataKey: "estado" },
+    { header: "Detalle", dataKey: "detalle" },
     { header: "Precio", dataKey: "precio" },
     { header: "Stock", dataKey: "stock" },
-    { header: "Detalle", dataKey: "detalle" },
-    { header: "Material", dataKey: "material" },
-    { header: "Largo", dataKey: "largo" },
-    { header: "Ancho", dataKey: "ancho" },
-    { header: "Alto", dataKey: "alto" },
+    { header: "Categoría", dataKey: "categoria" },
+  
+ 
+ 
 
   ];
   const rows = products.map((product) => ({
     id: product.id,
     nombre: product.nombre,
-    imagen: product.imagen,
-    categoria: product.categoria.nombre,
-    estado: product.estado,
+    detalle: product.detalle,
     precio: product.precio,
     stock: product.stock,
-    detalle: product.detalle,
-    material: product.material,
-    largo: product.largo,
-    ancho: product.ancho,
-    alto: product.alto,
+    categoria: product.categoria.nombre,
+    
   }));
 
   doc.autoTable({

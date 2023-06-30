@@ -17,7 +17,7 @@ import 'jspdf-autotable';
 
 export default function Table() {
 
-  const API_URL = "http://localhost:9090/cliente";
+  const API = "http://localhost:9090/cliente";
 
   let datosCliente = {
     id: null,
@@ -46,7 +46,7 @@ export default function Table() {
 
   const getClientes = () => {
     axios
-      .get(`${API_URL}`)
+      .get(`${API}`)
       .then((response) => {
         // handle success
         setClientes(response.data);
@@ -85,7 +85,7 @@ export default function Table() {
       if (cliente.id || isCreating === false) {
         // Actualizar cliente existente
         axios
-          .put(API_URL, cliente)
+          .put(API, cliente)
           .then((response) => {
             getClientes();
             setClienteDialog(false);
@@ -97,7 +97,7 @@ export default function Table() {
       } else {
         // Crear nuevo cliente
         axios
-          .post(API_URL, cliente)
+          .post(API, cliente)
           .then(() => {
             getClientes();
             setClienteDialog(false);
@@ -126,7 +126,7 @@ export default function Table() {
   const deleteCliente = () => {
     // Aquí se hace la petición a la API para eliminar el cliente
     axios
-      .delete(`${API_URL}/${cliente.id}`)
+      .delete(`${API}/${cliente.id}`)
       .then(() => {
         getClientes();
       })
@@ -174,7 +174,7 @@ export default function Table() {
   const deleteSelectedClientes = () => {
     selectedClientes.forEach((cliente) => {
       axios
-        .delete(`${API_URL}/${cliente.id}`)
+        .delete(`${API}/${cliente.id}`)
         .then(() => {
           // Eliminar el cliente de la lista actual
           setClientes((prevClientes) => prevClientes.filter((c) => c.id !== cliente.id));
